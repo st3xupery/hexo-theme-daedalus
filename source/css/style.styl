@@ -1,0 +1,175 @@
+@import "nib"
+@import "_variables"
+
+global-reset()
+
+@keyframes fade-in-right
+    from
+        opacity: 0
+        right: -20px
+    to
+        opacity: 1
+        right: 0px
+
+input, button
+    margin: 0
+    padding: 0
+    &::-moz-focus-inner
+        border: 0
+        padding: 0
+
+html
+    font-size: 67.5%;
+
+html, body, #container
+    height: 100%
+
+body
+    color: color-default
+    background: color-background
+    font: font-size font-sans
+
+a
+    color: color-link
+    text-decoration: none
+    &:visited
+        color: color-link
+
+h1
+    display: block
+    margin-bottom: 14px
+    font-size: 2em
+    color: color-default
+    text-decoration: none
+    line-height: line-height-title
+    a
+        color: color-default
+    a:visited
+        color: color-default
+    a:hover
+        color: color-link
+    @media mq-mini
+        font-size: 1.6em
+    @media mq-mobile
+        font-size: 1.6em
+
+code
+    margin: 0 2px
+    color: #e96900
+    padding: 3px 5px
+    font-size: 0.8em
+    border-radius: 2px
+    font-family: font-mono
+    background-color: #f8f8f8
+
+.left, .alignleft
+    float: left
+
+.right, .alignright
+    float: right
+
+.clear
+    clear: both
+
+.logo
+    width: logo-width
+    height: logo-height
+    background-repeat: no-repeat
+    background-image: url(logo-url)
+    background-size: logo-width logo-height
+
+body > #main,
+body > aside
+    box-sizing: border-box
+    display: block
+
+body > aside
+    width: calc(192px - 4px)
+        
+#main
+    padding: 10px
+    @media mq-tablet
+        width: 75%
+    @media mq-normal
+        float: left
+        width: 50%
+
+#profile
+    position: fixed;
+
+aside-margin = 2px
+content-max-width = 1200px
+content-page-ratio = 0.5
+aside-page-ratio = 0.25
+max-aside-size-threshold = 1000px
+max-aside-size = max-aside-size-threshold * aside-page-ratio
+
+@media mq-tablet
+    #main,
+    body > aside
+        display: inline-block
+        
+    #profile
+        position: static
+        float:left
+        
+    #page-header.docked::before,
+    body > aside
+        width: 'calc(%s - %s)' %((aside-page-ratio * 100%) aside-margin * 2)
+        max-width: max-aside-size - aside-margin * 2
+        margin: 0 aside-margin
+        
+    #main
+        float: right
+        width: (content-page-ratio + aside-page-ratio) * 100%
+        max-width: 750px
+        
+    aside#profile .profile-block
+        width: 100%
+        
+    #page-header
+        top: 0
+        
+    #page-header > *
+        display: inline-block
+        
+    #page-header.docked::before
+        display: inline-block
+        content: ''
+        height: 0
+        
+@media screen and (min-width: max-aside-size-threshold)
+    #page-header.docked::before,
+    #profile, 
+    body > aside
+        margin-left: 'calc(50% - %s)'%(max-aside-size-threshold/2)
+    #main
+        margin-right: 'calc(50% - %s)'%(max-aside-size-threshold/2)
+        width: 'calc(100% - %s)' %max-aside-size
+
+@media screen and (min-width: content-max-width)
+    #main
+        width: content-max-width - max-aside-size * 2
+        margin-right: 0
+    #sidebar
+        margin-left: 0
+    #profile,
+    #main
+        float: left
+    #profile, 
+    #page-header.docked::before
+        margin-left: 'calc(50% - %s)'%(content-max-width/2 - aside-margin)
+
+#header
+    top: 0;
+    position: fixed;
+
+@import "_extend"
+@import "_partial/header"
+@import "_partial/profile"
+@import "_partial/article"
+@import "_partial/comment"
+@import "_partial/archive"
+@import "_partial/footer"
+@import "_partial/sidebar"
+@import "_highlight/index"

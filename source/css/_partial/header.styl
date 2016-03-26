@@ -1,0 +1,113 @@
+$color_1 = #545454
+$color_2 = #FF5B5B
+
+#page-header
+    z-index: 10
+    background: rgba(0,0,0,0.8)
+    font-size: 1.2em
+    line-height: 30px
+    font-weight: 300
+    letter-spacing: 0.1em
+    width: 100%
+    text-align: right
+    a:visited, a
+        color: inherit
+    @media mq-tablet
+        text-align: left
+    &.docked
+        position: fixed
+
+.nav-toggle
+    display: inline-block
+    width: 2em
+    text-align: center
+    color: white
+    @media mq-tablet
+        display: none
+
+#page-header
+    nav
+        color: white
+        font-size: 80%
+        position: absolute
+        background: $color_2
+        color: white
+        right: -20px
+        opacity: 0
+        transition: ease 0.2s
+        @media mq-tablet
+            width: 100%
+            opacity: 1
+            background: transparent
+            position: static
+            display: block
+    &.on
+        nav
+            opacity: 1
+            right: 0
+
+.main-nav-link
+    padding: 0 10px
+    display: block
+    text-align: right
+    padding: 0 15px
+    color: white
+    &:nth-child(even)
+        background: rgba(0,0,0,0.1)
+    @media mq-tablet
+        display: inline-block
+        background: inherit !important
+        
+
+#search-form-wrap
+    display:none
+    @media mq-mini
+        display: none
+    .search-form
+        position: relative
+        .search-form-input
+            width: 100%
+            height: logo-height
+            padding: 0 30px 0 15px
+            line-height: logo-height
+            border-radius: ((logo-height + 2)/2)
+            &::-webkit-search-results-decoration
+            &::-webkit-search-cancel-button
+                -webkit-appearance: none
+        .search-form-submit
+            top: 50%
+            right: 15px
+            border: none
+            cursor: pointer
+            margin-top: -7px
+            background: none
+            position: absolute
+            font: 13px font-icon
+            font-family: 'FontAwesome'
+            &:before
+                content: '\f002'
+            &:hover, &:focus
+                color: #777
+
+.search-form-input,
+.search-form-input.st-ui-search-input,
+.search-form-input.st-default-search-input
+    -webkit-appearance: textarea
+    appearance: textarea
+    padding: 0
+    width: 200px
+    box-shadow: none
+    color: color-default
+    transition: 0.2s ease
+    box-sizing: border-box
+    height: auto !important
+    line-height: line-height
+    outline: none !important
+    background: none !important
+    font: font-size font-sans
+    border: 1px solid color-border !important
+    &:focus
+        border-color: color-link !important
+    &::-webkit-search-results-decoration
+    &::-webkit-search-cancel-button
+        -webkit-appearance: none

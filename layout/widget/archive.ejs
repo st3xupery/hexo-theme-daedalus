@@ -1,0 +1,8 @@
+<% if (site.posts.length) { %>
+    <div class="widget-wrap">
+        <h1 class="widget-title"><%= __('widget.archives') %></h1>
+        <div class="widget">
+            <%- list_archives() %>
+        </div>
+    </div>
+<% } %>

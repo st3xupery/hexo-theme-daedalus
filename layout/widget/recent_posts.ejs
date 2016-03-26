@@ -1,0 +1,19 @@
+<% if (site.posts.length) { %>
+    <div class="widget-wrap">
+        <h1 class="widget-title"><%= __('widget.recents') %></h1>
+        <div class="widget">
+            <ul id="recent-post" class="<%= (theme.customize.thumbnail?'':'no-thumbnail') %>">
+                <% site.posts.sort('date', -1).limit(5).each(function(post) { %>
+                    <li>
+                        <% if(theme.customize.thumbnail == true) { %>
+                        <%- partial('common/thumbnail.ejs', {post: post}) %>
+                        <% } %>
+                        <p class="item-category"><%- list_categories(post.categories, {show_count: false, depth:2, class: 'article-category', style: 'none', separator: '<i class="fa fa-angle-right"></i>'}) %></p>
+                        <p class="item-title"><a href="<%- url_for((post.link?post.link:post.path)) %>" class="title"><%= post.title %></a></p>
+                        <p class="item-date"><time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time></p>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+<% } %>

@@ -1,0 +1,67 @@
+#sidebar
+    display: none
+    h1
+        text-transform: uppercase
+        margin-bottom: 5px
+        
+    line-height: 1.2
+    a
+        color: inherit
+    @media mq-tablet
+        display: inline-block
+
+.widget-wrap
+    padding: 15px 5px;
+    border-bottom: 1px solid #eceff2;
+    margin-bottom: 4px;
+    p
+        font-size: 0.9em
+        margin-bottom: 0.4em
+    ul ul
+        margin-top: 0.3rem
+        padding-left: 20px
+    li
+        margin-bottom: 0.6rem
+        overflow: auto
+    .item-title
+        text-transform: uppercase
+        font-weight: bold
+    .item-date
+        color: #999
+            
+#recent-post
+    overflow:hidden
+    .thumbnail-image
+        height: 5em
+        width: 5em
+        display: inline-block
+        background-position: center center
+        background-size: cover
+        margin-right: 0.7em
+        float:left
+
+
+#toTop
+    @extend $block
+    cursor: pointer
+    text-align: center
+    width: 64px
+    height: 64px
+    color: white
+    font-size: 32px
+    line-height: 64px
+    background: color-default
+    border-radius: 4px
+    @media mq-mobile
+        width: 54px
+        height: 54px
+        font-size: 28px
+        line-height: 54px
+    @media mq-mini
+        width: 54px
+        height: 54px
+        font-size: 28px
+        line-height: 54px
+    &.fix
+        bottom: 20px
+        position: fixed

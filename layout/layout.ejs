@@ -1,0 +1,12 @@
+<%- partial('common/head') %>
+<body>
+    <%- partial('common/profile', null, {cache: !config.relative_link}) %>
+    <%- partial('common/header') %>
+    <section id="main"><%- body %></section>
+    <% if (theme.customize.sidebar) { %>
+        <%- partial('common/sidebar', null, {cache: !config.relative_link}) %>
+    <% } %>
+    <%- partial('common/footer', null, {cache: !config.relative_link}) %>
+    <%- partial('common/scripts') %>
+</body>
+</html>
