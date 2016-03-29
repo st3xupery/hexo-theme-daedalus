@@ -1,5 +1,6 @@
 #profile
     top: 0
+    left: 30px
     transition: top ease 0.2s
     z-index: 999
     margin-bottom: 10px
@@ -7,11 +8,14 @@
         width: 100%
         margin-top: 54px;
 
+.on
+    .profile-block.name:before
+        transform: rotate(0)
+
 .profile-block
     padding: 15px 20px
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid color-border
     margin-bottom: 4px
     background-color: white
     transition: 0.2s linear
@@ -36,10 +40,25 @@
         font-family: Helvetica Neue
         padding: 0
         line-height: 50px
-        text-align: center
+        box-shadow: none
+        &:before
+            transition-duration: 0.3s
+            font-family: FontAwesome
+            content: "\f078"
+            transform: rotate(-90deg)
+            position: absolute
+            display: inline-block;
+            left: -30px
+            text-align: center
+            width: 30px
+            font-size: 0.8em
+            color: $color_2
+            @media mq-tablet
+                display: none
         .lastname
             font-weight: bold
-        @media mq-normal
+        @media mq-tablet
+            text-align: center
             font-size: 1.6em
     &.avatar
         padding: 0

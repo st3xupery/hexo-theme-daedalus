@@ -40,14 +40,11 @@
 	};
 
 	function sticky(el, className) {
-		console.log(el);
 		if (!className) className = 'stuck';
 		var elOffsetTop = el.getBoundingClientRect().top + document.body.scrollTop;
 		var elSub = document.createElement('div');
-		elSub.style.height = el.offsetHeight + 'px';
 
 		function scrollerReverse() {
-			console.log('scrollerReverse', elOffsetTop, window.pageYOffset);
 			if (elOffsetTop >= window.pageYOffset) {
 				el.classList.remove(className);
 				el.parentNode.removeChild(elSub);
@@ -58,6 +55,7 @@
 
 		function scroller() {
 			if (elOffsetTop < window.pageYOffset) {
+				elSub.style.height = el.offsetHeight + 'px';
 				el.parentNode.insertBefore(elSub, el.nextSibling);
 				el.classList.add(className);
 				window.removeEventListener('scroll', scroller);
@@ -112,27 +110,6 @@ sticky(document.getElementById('page-header'), 'docked');
 	document.getElementById('toTop').addEventListener('click', function () {
 		scrollTo(document.body, 0, 200);
 	});
-})();
-
-(function(){
-
-	// Profile card
-	var header = document.getElementById('site-title'),
-		profileCard = document.getElementById('profile'),
-		profileToggleCallback = function(toggledOn) {
-			if (toggledOn) {
-				var offset = header.getBoundingClientRect();
-				header.classList.add('on');
-				profileCard.style.top = offset.bottom + 'px';
-			} else {
-				header.classList.remove('on');
-				profileCard.style.top = null;
-			}
-		}, 
-		profileAnchorEvent = getMenuToggleEvent(header, profileCard, profileToggleCallback);
-
-	header.addEventListener('click', profileAnchorEvent, false);
-
 })();
 
 (function () {

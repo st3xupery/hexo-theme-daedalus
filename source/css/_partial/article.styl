@@ -161,7 +161,8 @@ article
         color: color-grey
         text-decoration: none
         &:hover
-            color: color-default
+            text-decoration: none
+            color: color-link
 
 .article-comment-link
     float: right
@@ -260,9 +261,10 @@ article
     clearfix()
     background: color-background
 
-$article-share-link
+.article-share-links a
     width: 50px
-    height: 36px
+    text-align: center
+    line-height: 36px
     display: block
     float: left
     position: relative
@@ -276,25 +278,21 @@ $article-share-link
         color: #fff
 
 .article-share-twitter
-    @extend $article-share-link
     &:hover
         background: color-twitter
         text-shadow: 0 1px darken(color-twitter, 20%)
 
 .article-share-facebook
-    @extend $article-share-link
     &:hover
         background: color-facebook
         text-shadow: 0 1px darken(color-facebook, 20%)
 
 .article-share-pinterest
-    @extend $article-share-link
     &:hover
         background: color-pinterest
         text-shadow: 0 1px darken(color-pinterest, 20%)
 
 .article-share-google
-    @extend $article-share-link
     &:hover
         background: color-google
         text-shadow: 0 1px darken(color-google, 20%)

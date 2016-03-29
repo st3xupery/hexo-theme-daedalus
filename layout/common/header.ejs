@@ -3,9 +3,9 @@
 <% } %>
 
 <header id="page-header" data-toggle>
-  <div data-toggle-menu>
+  <nav data-toggle>
     <div class="nav-toggle" data-toggle-button><i class="fa fa-bars"></i></div>
-    <nav data-toggle-menu>
+    <div data-toggle-menu>
       <% for (var i in theme.menu) { %>
           <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
       <% } %>
