@@ -1,8 +1,8 @@
 <% var profile = theme.customize.profile; %>
 <aside id="profile" data-toggle>
-    <div class="profile-block name" data-toggle-button>
+    <h1 class="profile-block name" data-toggle-button>
         <%= profile.firstname %><span class="lastname"><%= profile.lastname %></span>
-    </div>
+    </h1>
     <div data-toggle-menu>
         <div class="profile-block avatar" style="background-image: url('<%= url_for(profile.avatar) %>')"></div>
         <div class="profile-block base-info">
