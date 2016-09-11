@@ -17,7 +17,6 @@
 			content: ')'
 
 .widget-wrap
-	padding: 15px 5px;
 	border-bottom: 1px solid #eceff2;
 	margin-bottom: 4px;
 	p
@@ -33,17 +32,38 @@
 		font-weight: bold
 	.item-date
 		color: #999
-			
+
 #recent-post
 	overflow:hidden
-	.thumbnail-image
+	> a
+		overflow: hidden
 		height: 5em
-		width: 5em
-		display: inline-block
+		width: 100%
+		background-color: #eee
+		margin-bottom: 0.4em
+		display: block
 		background-position: center center
 		background-size: cover
 		margin-right: 0.7em
-		float:left
+		position: relative
+		&:hover
+			.label span
+				background: color-accent
+				color: white
+	.label
+		bottom: .2em;
+		left: .2em;
+		right: .2em;
+		padding: 2px;
+		color: #fff;
+		font-style: normal;
+		position: absolute;
+		z-index: 3;
+		span
+			padding: 0.05em;
+			background: rgba(0,0,0,0.7);
+			font-size: 1.2em;
+			line-height: .9;
 
 #toTop
 	background: #fff
