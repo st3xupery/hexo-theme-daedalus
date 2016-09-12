@@ -1,13 +1,14 @@
+<% if(!index) { %><section id="main"><% } %>
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
 	<%- partial('post/gallery') %>
 	<% if (post.link || post.title) { %>
 		<header class="article-header">
 			<% if (index) { %>
-				<a
+				<a itemprop="url" href=
 				<% if (post.link) { %>
-				href="<%- url_for(post.path) %>" itemprop="url"
+				"<%- url_for(post.link) %>" target="_blank"
 				<% } else if (post.title) { %>
-				href="<%- url_for(post.link) %>" target="_blank" itemprop="url"
+				"<%- url_for(post.path) %>"
 				<% } %>
 				>
 					<% if (post.banner) { %>
@@ -38,14 +39,14 @@
 		<% } %>
 		<%- post.content %>
 	<% } %>
+	<% if (index) { %>
+		<a class="article-more-link" href="<%- url_for(post.path) %>#more"><span><%= __('article.more') %></span></a>
+	<% } else { %> <% } %>
+	</div>
 	<footer class="article-footer">
-		<% if (index) { %>
-			<a class="article-more-link" href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
-		<% } else { %> <% } %>
 		<%- partial('share/index', { post: post }) %>
 		<%- partial('comment/counter', { post: post }) %>
 	</footer>
-	</div>
 	<% if (!index) { %>
 		<%- partial('post/nav') %>
 	<% } %>
@@ -54,3 +55,4 @@
 <% if (!index) { %>
 	<%- partial('comment/index') %>
 <% } %>
+<% if(!index) { %></section><% } %>

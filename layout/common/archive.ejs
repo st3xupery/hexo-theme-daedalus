@@ -1,7 +1,8 @@
 <section id ="main"
 <% switch (type) {
-	case 'archive':
-		var last;
+	case 'archive': %>
+		>
+		<% var last;
 		page.posts.each(function(post, i) {
 			var year = post.date.year();
 			if (last != year) {
