@@ -5,8 +5,13 @@
 	z-index: 999
 	margin-bottom: 10px
 	[data-toggle-menu]
+		visibility: hidden
 		width: 100%
 		margin-top: 54px;
+		@media mq-tablet
+			visibility: visible
+	&.on [data-toggle-menu]
+		visibility: visible
 
 .on
 	.profile-block.name:before
@@ -32,9 +37,9 @@
 		clear: both;
 	&.name
 		font-size: 3em !important
-		background: color-accent
 		font-weight: normal
-		color: white
+		background: transparent
+		color: color-default
 		padding: 0
 		line-height: 50px
 		box-shadow: none
@@ -55,6 +60,8 @@
 		.lastname
 			font-weight: bold
 		@media mq-tablet
+			background: color-accent
+			color: white
 			text-align: center
 			font-size: 1.6em
 	&.avatar
