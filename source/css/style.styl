@@ -10,6 +10,16 @@ global-reset()
 	to opacity: 1
 		right: 0px
 
+button
+	border: none
+	cursor: pointer
+	background-color: color-default
+	color: color-background
+	border-radius: 0 0.6em
+	&:hover
+		background-color: color-accent
+		color: white
+
 input, button
 	margin: 0
 	padding: 0
@@ -28,9 +38,7 @@ a
 	color: color-link
 	text-decoration: none
 	transition-duration: 0.1s
-	&:visited
-		color: color-link
-	a:hover, a:visited
+	&:hover
 		color: color-link
 
 h1
@@ -44,6 +52,8 @@ h1
 	font-weight: bold
 	a
 		color: color-default
+	a:hover
+		color: color-link
 	@media mq-mini
 		font-size: 1.6em
 	@media mq-mobile

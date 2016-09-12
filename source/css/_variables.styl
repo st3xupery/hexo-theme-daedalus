@@ -16,7 +16,7 @@ color-accent = #da523d
 color-grey = #999
 color-border = #eceff2
 color-link = color-accent
-color-background = #f5f8f9
+color-background = #eee
 color-sidebar-text = #777
 color-sidebar-text-dark = #333
 color-widget-background = #ddd
@@ -33,8 +33,6 @@ line-height = 1.6em
 line-height-title = 1.3em
 
 // Header
-header-height = 64px
-header-sub-height = 48px
 logo-url = hexo-config("customize.logo.url")
 logo-width = 0px + hexo-config("customize.logo.width")
 logo-height = 0px + hexo-config("customize.logo.height")
@@ -55,30 +53,6 @@ main-column = 7
 sidebar-column = 3
 profile-column = 3
 sidebar-column-tablet = 4
-
-if sidebar
-    _sidebar-column = sidebar-column
-else
-    _sidebar-column = 0
-
-if profile
-    _profile-column = profile-column
-else
-    _profile-column = 0
-
-// Grids
-column-width = 80px
-gutter-width = 20px
-if _sidebar-column is 0 and _profile-column is 0
-    columns = 10
-    main-column = 10
-else
-    columns = main-column + _sidebar-column + _profile-column
-
-if sidebar
-    main-column-tablet = 6
-    if profile
-        main-column-tablet = 9
 
 // Media queries
 mq-mini = "screen and (min-width: 320px)"

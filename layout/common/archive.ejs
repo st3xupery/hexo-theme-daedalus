@@ -1,51 +1,52 @@
+<section id ="main"
 <% switch (type) {
-        case 'archive':
-        var last;
-        page.posts.each(function(post, i) {
-            var year = post.date.year();
-            if (last != year) {
-                if (last != null) { %>
-                    </section>
-                <% }
-                last = year; %>
-                <section class="archives-group">
-                    <h1><a href="<%- url_for('archives/' + year) %>"><%= year %></a></h1>
-            <% } %>
-            <%- partial('summary', {post: post, archive: true}) %>
-        <% });
-        if (page.posts.length) { %>
-            </section>
-        <% }
-        break;
-    case 'category': %>
-        <section class="archives-group">
-            <h1><%= page.category %></h1>
-            <% page.posts.each(function (post, i) { %>
-                <%- partial('summary', {post: post, archive: false}) %>
-            <% }); %>
-        </section>
-        <%
-        break;
-    case 'tag': %>
-        <section class="archives-group">
-            <h1>#<%= page.tag %></h1>
-            <% page.posts.each(function (post, i) { %>
-                <%- partial('summary', {post: post, archive: false}) %>
-            <% }); %>
-        </section>
-        <%
-        break;
-    default:
-        page.posts.each(function(post) { %>
-            <%- partial('article', { post: post, index: true }) %>
-        <% })
-        break;
+	case 'archive':
+		var last;
+		page.posts.each(function(post, i) {
+			var year = post.date.year();
+			if (last != year) {
+				if (last != null) { %>
+					</section>
+				<% }
+				last = year; %>
+				<section class="archives-group">
+					<h1><a href="<%- url_for('archives/' + year) %>"><%= year %></a></h1>
+			<% } %>
+			<%- partial('summary', {post: post, archive: true}) %>
+		<% });
+		if (page.posts.length) { %>
+			</section>
+		<% }
+		break;
+	case 'category': %>
+		class="archives-group">
+			<h1><%= page.category %></h1>
+			<% page.posts.each(function (post, i) { %>
+				<%- partial('summary', {post: post, archive: false}) %>
+			<% }); %>
+		<%
+		break;
+	case 'tag': %>
+		class="archives-group">
+			<h1>#<%= page.tag %></h1>
+			<% page.posts.each(function (post, i) { %>
+				<%- partial('summary', {post: post, archive: false}) %>
+			<% }); %>
+		<%
+		break;
+	default: %>
+		class="archives-group">
+		<% page.posts.each(function(post) { %>
+			<%- partial('article', { post: post, index: true }) %>
+		<% }) %>
+		<% break;
 }
 if (page.total > 1) { %>
-    <nav id="page-nav">
-        <%- paginator({
-            prev_text: '&laquo; ' + __('nav.prev'),
-            next_text: __('nav.next') + ' &raquo;'
-        }) %>
-    </nav>
+	<nav id="page-nav">
+		<%- paginator({
+			prev_text: '&laquo; ' + __('nav.prev'),
+			next_text: __('nav.next') + ' &raquo;'
+		}) %>
+	</nav>
 <% } %>
+</section>
