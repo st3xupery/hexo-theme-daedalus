@@ -38,6 +38,7 @@
 		<% } %>
 		<%- post.content %>
 	<% } %>
+	</div>
 	<footer class="article-footer">
 		<% if (index) { %>
 			<a class="article-more-link" href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
@@ -45,7 +46,6 @@
 		<%- partial('share/index', { post: post }) %>
 		<%- partial('comment/counter', { post: post }) %>
 	</footer>
-	</div>
 	<% if (!index) { %>
 		<%- partial('post/nav') %>
 	<% } %>

@@ -5,9 +5,9 @@
 			<% site.posts.sort('date', -1).limit(5).each(function(post) { %>
 				<% var thumbnailUrl = thumbnail(post) %>
 				<% if (thumbnailUrl) { %>
-				<a href="<%- url_for((post.link?post.link:post.path)) %>"style="background-image:url(<%- url_for(thumbnailUrl) %>)" alt="<%= post.title %>" class="thumbnail-image">
+				<a href="<%- url_for((post.link?post.link:post.path)) %>" style="background-image:url(<%- url_for(thumbnailUrl) %>)" alt="<%= post.title %>" class="<%= (thumbnailUrl?'thumbnail-image':'no-thumbnail') %>">
 				<% } else { %>
-				<a class="thumbnail-image thumbnail-none">
+				<a href="<%- url_for((post.link?post.link:post.path)) %>" class="thumbnail-image thumbnail-none">
 				<% } %>
 					<!-- <p class="item-category"><%- list_categories(post.categories, {show_count: false, depth:2, class: 'article-category', style: 'none', separator: '<i class="fa fa-angle-right"></i>'}) %></p> -->
 					<span class="label"><span class="title"><%= post.title %></span></span>

@@ -27,6 +27,11 @@ input, button
 		border: 0
 		padding: 0
 
+html
+	font-size: 75%
+	@media mq-normal
+		font-size: 100%
+
 html, body, #container
 	height: 100%
 
@@ -37,17 +42,16 @@ body
 a
 	color: color-link
 	text-decoration: none
-	transition-duration: 0.1s
 	&:hover
 		color: color-link
+a, a *
+	transition-duration: 0.1s
 
 h1
 	display: block
 	margin-bottom: 14px
 	font-size: 4em
 	color: color-default
-	text-decoration: none
-	line-height: line-height-title
 	font-family: font-header
 	font-weight: bold
 	a

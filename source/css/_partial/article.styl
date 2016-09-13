@@ -2,7 +2,7 @@ article
 	font-size: 1.3em
 	background-color: #eee
 	overflow: hidden
-	margin-bottom: 20px
+	margin-bottom: 1rem
 	header
 		> *
 			display: block
@@ -20,9 +20,9 @@ article
 	footer
 		font-size: 0.85em
 		overflow: auto
-		border-top: 1px dashed #da523d;
+		border-top: 1px solid #da523d;
 		a
-			padding: 1em
+			padding: article-padding
 			text-decoration: none
 			display: inline-block
 			&:hover
@@ -58,9 +58,15 @@ article
 		&:before
 			content: "#"
 
+.archives-group .article-entry
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.18) 94%, rgba(0, 0, 0, 0.34) 100%)
+	:last-child
+		margin-bottom: 0 !important
+
 .article-entry
 	font-size: 0.9em
 	color: color-default
+	display: inline-block
 	padding: 0 article-padding
 	p, table
 		line-height: 1.5
@@ -162,7 +168,6 @@ article
 .article-share-link
 	float: right
 	cursor: pointer
-	margin-left: 20px
 	&:before
 		content: "\f064"
 
