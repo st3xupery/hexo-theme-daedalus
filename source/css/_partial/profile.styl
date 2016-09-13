@@ -2,11 +2,21 @@
 	top: 0
 	left: 30px
 	transition: top ease 0.2s
+	height: 0
 	z-index: 999
 	margin-bottom: 10px
+	@media mq-tablet
+		height: auto
+	&.on
+		height: auto
 	[data-toggle-menu]
+		visibility: hidden
 		width: 100%
 		margin-top: 54px;
+		@media mq-tablet
+			visibility: visible
+	&.on [data-toggle-menu]
+		visibility: visible
 
 .on
 	.profile-block.name:before
@@ -17,12 +27,16 @@
 	width: 100%;
 	box-sizing: border-box;
 	margin-bottom: 4px
-	background-color: #eee
+	background-color: white
+	border: 1px solid #eee
 	transition: 0.2s linear
 	position: relative
 	opacity: 0
 	top: -20px
 	@media mq-tablet
+		border: none
+		background-color: #eee
+		color: color-default
 		opacity: 1
 		top: 0
 	@media mq-normal
@@ -32,10 +46,11 @@
 		clear: both;
 	&.name
 		font-size: 3em !important
-		background: color-accent
 		font-weight: normal
-		color: white
+		background: transparent
+		color: color-default
 		padding: 0
+		border: none
 		line-height: 50px
 		box-shadow: none
 		&:before
@@ -55,6 +70,8 @@
 		.lastname
 			font-weight: bold
 		@media mq-tablet
+			background: color-accent
+			color: white
 			text-align: center
 			font-size: 1.6em
 	&.avatar
@@ -62,6 +79,7 @@
 		height: 170px
 		background-size: cover
 		background-position: center center
+		border: none
 	&.base-info
 		text-align: center
 		#avatar
