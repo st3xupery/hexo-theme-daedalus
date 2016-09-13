@@ -1,0 +1,62 @@
+.article-share-links a
+	width: 50px
+	line-height: 36px
+
+.profile-block.social-links a, .article-share-links a
+	text-align: center
+	display: inline-block
+	position: relative
+	color: #999
+	text-shadow: 0 1px #fff
+	&:before
+		font-size: 20px
+		absolute-center(@font-size)
+		text-align: center
+	&:hover
+		color: #fff
+
+[class*="share-"]
+	&:before
+		font-family: FontAwesome
+
+.share-twitter
+	&:before
+		content: "\f099"
+	&:hover
+		background: color-twitter
+		text-shadow: 0 1px darken(color-twitter, 20%)
+
+.share-facebook
+	&:before
+		content: "\f09a"
+	&:hover
+		background: color-facebook
+		text-shadow: 0 1px darken(color-facebook, 20%)
+
+.share-pinterest
+	&:before
+		content: "\f231"
+	&:hover
+		background: color-pinterest
+		text-shadow: 0 1px darken(color-pinterest, 20%)
+
+.share-google
+	&:before
+		content: "\f1a0"
+	&:hover
+		background: color-google
+		text-shadow: 0 1px darken(color-google, 20%)
+
+.share-github
+	&:before
+		content: "\f09b"
+	&:hover
+		background: color-google
+		text-shadow: 0 1px darken(color-google, 20%)
+
+.share-linkedin
+	&:before
+		content: "\f0e1"
+	&:hover
+		background: color-google
+		text-shadow: 0 1px darken(color-google, 20%)
