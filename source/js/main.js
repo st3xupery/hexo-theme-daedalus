@@ -68,7 +68,7 @@
 	module.sticky = sticky;
 })();
 
-sticky(document.getElementById('page-header'), 'docked');
+//sticky(document.getElementById('page-header'), 'docked');
 
 // Directives
 (function(){

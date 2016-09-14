@@ -12,7 +12,7 @@
 	[data-toggle-menu]
 		visibility: hidden
 		width: 100%
-		margin-top: 54px;
+		margin-top: 120px;
 		@media mq-tablet
 			visibility: visible
 	&.on [data-toggle-menu]
@@ -23,6 +23,7 @@
 		transform: rotate(0)
 
 .profile-block
+	text-align: center
 	padding: 15px 20px
 	width: 100%;
 	box-sizing: border-box;
@@ -46,13 +47,9 @@
 		clear: both;
 	&.name
 		font-size: 3em !important
-		font-weight: normal
-		background: transparent
 		color: color-default
-		padding: 0
-		border: none
+		padding-bottom: 0
 		line-height: 50px
-		box-shadow: none
 		&:before
 			transition-duration: 0.3s
 			font-family: FontAwesome
@@ -70,8 +67,6 @@
 		.lastname
 			font-weight: bold
 		@media mq-tablet
-			background: color-accent
-			color: white
 			text-align: center
 			font-size: 1.6em
 	&.avatar
@@ -110,15 +105,14 @@
 	@media mq-tablet
 		display: block
 
-#profile
-	& > .profile-block:first-child
-		display: block
-		opacity: 1
-		position: fixed;
-		width: inherit;
-		max-width: inherit;
-		z-index: 1000
-		top: 0
+#profile > .profile-block:first-child
+	display: block
+	opacity: 1
+	position: fixed;
+	width: inherit;
+	max-width: inherit;
+	z-index: 1000
+	top: 0
 
 #profile.on
 	.profile-block
