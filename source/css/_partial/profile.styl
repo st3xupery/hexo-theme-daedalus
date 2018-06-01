@@ -1,22 +1,27 @@
 #profile
+	position: absolute
 	top: 0
 	left: 30px
-	transition: top ease 0.2s
 	height: 0
 	z-index: 999
 	margin-bottom: 10px
 	@media mq-tablet
+		position: static !important
 		height: auto
 	&.on
+		position: fixed
 		height: auto
 	[data-toggle-menu]
-		visibility: hidden
+		transition: top 0.2s ease
+		top: -200px
+		position: relative
 		width: 100%
-		margin-top: 120px;
 		@media mq-tablet
+			top: 0
 			visibility: visible
 	&.on [data-toggle-menu]
-		visibility: visible
+		margin-top: 5px
+		top: 0
 
 .on
 	.profile-block.name:before
@@ -24,19 +29,18 @@
 
 .profile-block
 	text-align: center
-	padding: 15px 20px
+	padding: 15px 0px
 	width: 100%;
 	box-sizing: border-box;
 	margin-bottom: 4px
-	background-color: white
 	border: 1px solid #eee
 	transition: 0.2s linear
 	position: relative
 	opacity: 0
-	top: -20px
+	background-color: color-background-secondary
 	@media mq-tablet
+		background-color: color-background
 		border: none
-		background-color: #eee
 		color: color-default
 		opacity: 1
 		top: 0
@@ -46,10 +50,9 @@
 		box-sizing: border-box;
 		clear: both;
 	&.name
-		font-size: 3em !important
-		color: color-default
 		padding-bottom: 0
 		line-height: 50px
+		background: transparent
 		&:before
 			transition-duration: 0.3s
 			font-family: FontAwesome
@@ -64,11 +67,12 @@
 			color: color-accent
 			@media mq-tablet
 				display: none
-		.lastname
-			font-weight: bold
 		@media mq-tablet
+			background: color-background-secondary
 			text-align: center
-			font-size: 1.6em
+			font-size: 1.9em
+		@media mq-normal
+			font-size: 2em
 	&.avatar
 		padding: 0
 		height: 170px
@@ -102,17 +106,42 @@
 			position: relative
 			transition: 0.2s ease
 
+.profile-block[data-toggle-menu]
 	@media mq-tablet
 		display: block
 
-#profile > .profile-block:first-child
+#page-title-ribbon
 	display: block
 	opacity: 1
-	position: fixed;
-	width: inherit;
-	max-width: inherit;
+	max-width: inherit
 	z-index: 1000
-	top: 0
+	text-align: left
+	border: none;
+	border-bottom: none
+	color: color-accent
+	padding: 0 6px 0 0;
+	box-shadow: none
+	z-index: 1000
+	font-size: 2.3em
+	width: calc(100vw - 90px)
+	@media mq-tablet
+		width: inherit
+		font-size: 1.75em
+		text-align: center
+		padding: 60px 0 0 0
+		border-bottom: 6px solid color-accent
+	@media mq-normal
+		font-size: 1.9em
+	&.docked
+		position: fixed
+		animation: scrollin-delay 2s
+
+
+@keyframes scrollin-delay {
+    0%   {top: -200px}
+    50%   {top: -200px}
+    100% {top: 0px}
+}
 
 #profile.on
 	.profile-block

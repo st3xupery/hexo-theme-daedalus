@@ -1,12 +1,9 @@
-article,
-.article-share-box,
-#recent-post a:hover,
-.profile-block
+.article-share-box
 	box-shadow: 0px 6px 0px -4px rgba(0, 0, 0, 0.15)
 
 article
 	font-size: 1.5em
-	background-color: #eee
+	background-color: color-background
 	overflow: hidden
 	margin-bottom: 1rem
 	@media mq-tablet
@@ -14,12 +11,14 @@ article
 	header
 		> *
 			display: block
+		h1
+			font-weight: 600
 		h1, > div
 			margin: article-padding 0
 			box-sizing: border-box
 			padding: 0 article-padding
 		> a:hover *
-				color: color-accent
+			color: color-accent
 	footer
 		margin: 0 article-padding
 		font-size: 0.85em
@@ -75,9 +74,8 @@ article
 	text-decoration: none !important
 	display: inline-block
 	width: 100%
-	border-bottom: 1px solid #cecece
-	span, &:before
-		transition-duration: 0.6s
+	border-bottom: 1px solid color-background-secondary
+	transition-duration: 0.4s
 	&:hover
 		border-bottom-color: color-accent
 		span
@@ -85,9 +83,9 @@ article
 			color: white !important
 			opacity: 1
 	span
-		color: white
-		background: #b0b1b3
-		font-weight: 500
+		transition-duration: 0.4s
+		color: color-accent
+		background: color-background-secondary
 		display: inline-block
 		position: relative
 		z-index: 2
@@ -100,7 +98,7 @@ article
 		right: 0
 		bottom: 1px
 		height: 50%
-		background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgb(238, 238, 238) 100%)
+		background: linear-gradient(180deg, rgba(255,255,255,0) 0%, color-background 100%)
 		opacity: 1
 	&:hover:before
 		opacity: 0
@@ -113,19 +111,22 @@ article
 	color: color-default
 	padding: 0 article-padding
 	position: relative
-	p, table
+	text-align: justify
+	p, table, ul
 		line-height: 1.5
 		margin: 1em 0
 	h1, h2, h3, h4, h5, h6
-		font-weight: bold
+		font-family: font-header
+		font-weight: 600
 	a
 		color: color-link
 		text-decoration: none
 		&:hover
 			text-decoration: underline
+	ul
+		list-style-type: square
 	ul, ol, dl
-		margin-top: line-height
-		margin-bottom: line-height
+		margin: 0.5em 0 0.5em 1em
 	img, video
 		max-width: 100%
 		height: auto
@@ -138,7 +139,7 @@ article
 		border-collapse: collapse
 		border-spacing: 0
 	th
-		font-weight: bold
+		font-weight: 500
 		border-bottom: 3px solid color-border
 		padding-bottom: 0.5em
 	td
@@ -199,8 +200,6 @@ article
 			height: 100%
 			margin-top: 0
 
-
-
 .article-comment-link
 	float: right
 	&:before
@@ -215,6 +214,7 @@ article
 #article-nav
 	clearfix()
 	position: relative
+	padding: 0 article-padding
 	@media mq-normal
 		margin: block-margin 0
 		&:before
@@ -224,34 +224,39 @@ article
 			background: color-default + #222
 
 .article-nav-link-wrap
+	background: color-background-secondary
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.15)
 	text-decoration: none
-	color: color-grey
-	box-sizing: border-box
-	margin-top: block-margin
-	text-align: center
+	margin: block-margin 0
 	display: block
+	padding: 10px 20px;
+	box-sizing: border-box
+	border-radius: 4px
+	transition: 0.2s
 	&:hover
 		color: color-default
+		box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15)
 	@media mq-normal
-		width: 50%
+		border: none
+		width: calc(50% - 10px)
 		margin-top: 0
 
 #article-nav-newer
 	@media mq-normal
 		float: left
 		text-align: right
-		padding-right: 20px
+		margin-right: 10px
 
 #article-nav-older
 	@media mq-normal
 		float: right
 		text-align: left
-		padding-left: 20px
+		margin-left: 10px
 
 .article-nav-caption
 	letter-spacing: 2px
 	line-height: 1em
-	font-weight: bold
+	font-weight: 500
 	color: color-default
 	#article-nav-newer &
 		margin-right: -2px
@@ -260,7 +265,6 @@ article
 	font-size: 0.85em
 	margin-top: 0.5em
 	color: color-default
-	line-height: line-height
 
 .article-share-box
 	position: absolute

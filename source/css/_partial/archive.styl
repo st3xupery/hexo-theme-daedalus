@@ -1,29 +1,31 @@
 
 #page-nav
-    clearfix()
-    margin: block-margin auto
-    text-align: center
-    color: color-grey
-    overflow: hidden
-    a, span
-        height: 32px
-        padding: 0 10px
-        line-height: 32px
-        text-align: center
-        display: inline-block
-        border-radius: 2px
-    a
-        color: color-grey
-        text-decoration: none
-        &:hover
-            color: white
-            background: color-link
-    .page-number
-        display: inline-block
-        @media mq-mini
-            display: none
-    .current
-        color: color-default
-        font-weight: bold
-    .space
-        color: color-border
+	clearfix()
+	text-align: center
+	color: color-grey
+	overflow: hidden
+	@media mq-tablet
+		margin: block-margin auto
+	a, span
+		height: 32px
+		padding: 0 10px
+		line-height: 32px
+		text-align: center
+		display: inline-block
+		border-radius: 2px
+	a
+		padding: 5px 20px;
+		text-decoration: none
+		font-size: 2em
+		&:hover
+			color: white
+			background: color-link
+	.page-number
+		display: inline-block
+		@media mq-mini
+			display: none
+	.current
+		color: color-default
+		font-weight: 500
+	.space
+		color: color-border

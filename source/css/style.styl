@@ -10,6 +10,12 @@ global-reset()
 	to opacity: 1
 		right: 0px
 
+@keyframes scrollin {
+    0%   {top: -200px}
+    100% {top: 0px}
+}
+
+
 html
 	font-size: 70%
 	@media mq-normal
@@ -47,7 +53,7 @@ body
 	color: color-default
 	font-family: KlinicSlab, Helvetica, Arial, sans-serif
 
-a
+a, input[type='submit']
 	color: color-link
 	text-decoration: none
 	&:hover
@@ -61,15 +67,14 @@ h1
 	font-size: 4em
 	color: color-default
 	font-family: font-header
-	font-weight: bold
+	letter-spacing: -1px
+	font-size: 2.3em
 	a
 		color: color-default
 	a:hover
 		color: color-link
-	@media mq-mini
-		font-size: 1.6em
-	@media mq-mobile
-		font-size: 2.5em
+	@media mq-tablet
+		font-size: 1.8em
 
 code
 	margin: 0 2px
@@ -112,9 +117,6 @@ body > aside
 		float: left
 		width: 50%
 
-#profile
-	position: fixed;
-
 aside-margin = 2px
 content-max-width = 1200px
 content-page-ratio = 0.5
@@ -132,18 +134,15 @@ max-aside-size = max-aside-size-threshold * aside-page-ratio
 		float:left
 
 	#page-header.docked::before,
+	#page-title-ribbon,
 	body > aside
-		width: 'calc(%s - %s)' %((aside-page-ratio * 100%) aside-margin * 2)
+		width: 'calc(%s - %s)' %((aside-page-ratio * 100vw) aside-margin * 2)
 		max-width: max-aside-size - aside-margin * 2
-		margin: 0 aside-margin
 
 	#main
 		float: right
 		width: (content-page-ratio + aside-page-ratio) * 100%
 		max-width: 750px
-
-	aside#profile .profile-block
-		width: 100%
 
 	#page-header
 		top: 0

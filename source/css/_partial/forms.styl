@@ -5,21 +5,26 @@
 
 input,
 textarea {
-	box-sizing:border-box;
-	background-color:transparent;
-	border:none;
-	border-bottom:#CCC solid 1px;
+	box-sizing: border-box
+	font-family: inherit
+	background-color: color-background-secondary
+	border:none
+	font-size: 1em;
+	border-radius: 5px;
+	border-bottom: #CCC solid 1px;
 	padding:13px 8px;
 	font-weight:300;
 	margin-bottom:10px;
 	width:100%;
 }
-input[type='submit'] {
-	color:white;
-	background-color:#2196f3;
-	width:auto;
-	float:right;
-}
+
+input[type='submit']
+	width: auto
+	float: right
+	cursor: pointer
+	&:hover
+		background: color-accent
+		color: white
 
 form {
 	width:100%;

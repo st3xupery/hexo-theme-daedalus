@@ -18,7 +18,7 @@ widget:
     tags: 'tags'
     tag_cloud: 'tag cloud'
 article:
-    more: 'Read More'
+    more: 'read more'
     comments: 'Comments'
     share: 'Share'
     catalogue: 'Catalogue'

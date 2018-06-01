@@ -5,6 +5,8 @@
 	line-height: 1.2
 	a
 		color: inherit
+		&:hover
+			color: color-link !important
 	@media mq-tablet
 		display: inline-block
 	.thumbnail-none
@@ -28,9 +30,9 @@
 		margin-bottom: 0.6rem
 		overflow: auto
 	.item-title
-		font-weight: bold
+		font-weight: 500
 	.item-date
-		color: #999
+		color: color-default
 
 #recent-post
 	overflow:hidden
@@ -45,10 +47,9 @@
 		background-size: cover
 		margin-right: 0.7em
 		position: relative
-		&:hover
-			.label span
-				background: color-accent
-				color: white
+		.label span
+			background-color: color-background
+			color: color-default
 	.label
 		bottom: .2em;
 		left: .2em;
@@ -60,7 +61,6 @@
 		z-index: 3;
 		span
 			padding: 0.05em;
-			background: rgba(0,0,0,0.7);
 			font-size: 1.2em;
 			line-height: .9;
 
@@ -80,3 +80,17 @@
 	&.fix
 		bottom: 20px
 		position: fixed
+
+@media mq-tablet-landscape
+	.thumbnail-image:before
+		content: ' '
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: #f1ece9
+		opacity: 0.8
+
+.thumbnail-image:hover:before
+	opacity: 0
